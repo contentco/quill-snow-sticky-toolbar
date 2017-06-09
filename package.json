@@ -1,0 +1,45 @@
+{
+  "name": "quill-snow-sticky-toolbar",
+  "version": "0.0.1",
+  "description": "Quill extension that make snow theme toolbar as sticky",
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "uglifyjs-webpack-plugin": "^0.4.3",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "test": "npm test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentco/quill-snow-sticky-toolbar.git"
+  },
+  "keywords": [
+    "content",
+    "emoji",
+    "quill",
+    "editor"
+  ],
+  "author": "contentco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/contentco/quill-snow-sticky-toolbar/issues"
+  },
+  "homepage": "https://github.com/contentco/quill-emoji#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "css-element-queries": "^0.4.0",
+    "preact": "^7.2.1",
+    "quill": "^1.2.4"
+  }
+}

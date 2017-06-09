@@ -1,0 +1,24 @@
+{
+  "name": "quill-sticky-toolbar",
+  "version": "0.0.1",
+  "description": "Quill Extension for Sticky Snow Toolbar",
+  "main": "webpack.config.js",
+  "authors": [
+    "contentco"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "content",
+    "emoji",
+    "quill",
+    "editor"
+  ],
+  "homepage": "https://github.com/contentco/quill-emoji",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,1 @@
+import sticky_toolbar from '../src/module-sticky-toolbar';
