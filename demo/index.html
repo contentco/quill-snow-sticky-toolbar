@@ -92,8 +92,8 @@
                   text += charset.charAt(Math.floor(Math.random() * charset.length));
               return text;
           }
-          var randomString = stringGen(3000);
-          quill.clipboard.dangerouslyPasteHTML('<p>' + randomString + '<p>' + '<p>' + randomString + '<p>');
+          var randomString = stringGen(30);
+          quill.clipboard.dangerouslyPasteHTML('<span style="background-color: rgb(230, 0, 0);">Text</span>');
 
           var cliEle = document.getElementById('show');
           cliEle.onclick = function(e) {

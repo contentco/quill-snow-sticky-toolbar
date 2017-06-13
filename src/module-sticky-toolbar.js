@@ -3,29 +3,31 @@ class StickyToolbar {
     constructor(quill, props) {
         this.quill = quill;
         this.toolbar = quill.getModule('toolbar');
-        if (this.quill.container.classList.contains('quill-sticky')) {
-        	let obj = this.toolbar.container;
-        	let parentDiv = obj.parentNode;
-        	let parentDivWidth = parentDiv.offsetWidth;
-        	let objTop = obj.getBoundingClientRect().top;
+    	let obj = this.toolbar.container;
+    	let editorParent = obj.parentNode.parentNode.parentNode;//ql-toolbar=>div=>ng-quill=>div
+    	let objTop = editorParent.getBoundingClientRect().top;
+        window.addEventListener('scroll', function(evt){ 
+            if (evt.target.classList.contains('resize-sensor-expand') || evt.target.classList.contains('resize-sensor-shrink')) {
+                return;
+            }
+            let distanceFromTop = evt.target.scrollTop;
+            if (distanceFromTop > objTop - 40) {
+                obj.style.position = "fixed";
+                obj.style.top = (objTop - 1) + 'px';
+                obj.style.width = editorParent.clientWidth + 'px';
+                obj.style.background = "#FFF";
+                obj.style.zIndex = "999";
+            }
+            else{
+                obj.style.position = "relative";
+                obj.style.width = editorParent.clientWidth + 'px';
+                obj.style.top = '0px';
+            }
+        }, true);
 
-        	new ResizeSensor(parentDiv, function() {
-	            obj.style.width = parentDiv.clientWidth + 'px';
-	        });
-        	
-        	window.addEventListener('scroll', function (evt) {
-				var distance_from_top = document.body.scrollTop;
-				if (distance_from_top > objTop) {
-					obj.style.position = "fixed";
-					obj.style.width = parentDiv.clientWidth + 'px';
-					obj.style.top =  '0px';
-				}
-				if(distance_from_top < objTop) {
-					obj.style.position = "relative";
-					obj.style.width = parentDiv.clientWidth + 'px';
-				}
-			});
-        }
+        new ResizeSensor(editorParent, function() {
+            obj.style.width = editorParent.clientWidth + 'px';
+        });
     }
 }
 Quill.register('modules/sticky_toolbar', StickyToolbar);
