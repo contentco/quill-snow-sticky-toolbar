@@ -16,7 +16,7 @@ class StickyToolbar {
                 obj.style.top = (objTop - 1) + 'px';
                 obj.style.width = editorParent.clientWidth + 'px';
                 obj.style.background = "#FFF";
-                obj.style.zIndex = "999";
+                obj.style.zIndex = "80";
             }
             else{
                 obj.style.position = "relative";
