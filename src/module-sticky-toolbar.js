@@ -7,8 +7,10 @@ class StickyToolbar {
     	let editorParent = obj.parentNode.parentNode.parentNode;//ql-toolbar=>div=>ng-quill=>div
     	let objTop = editorParent.getBoundingClientRect().top;
         window.addEventListener('scroll', function(evt){ 
-            if (evt.target.classList.contains('resize-sensor-expand') || evt.target.classList.contains('resize-sensor-shrink')) {
-                return;
+            if (evt.target) {
+                if (evt.target.classList.contains('resize-sensor-expand') || evt.target.classList.contains('resize-sensor-shrink')) {
+                    return;
+                }
             }
             let distanceFromTop = evt.target.scrollTop;
             if (distanceFromTop > objTop - 40) {
